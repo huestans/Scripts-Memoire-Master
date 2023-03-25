@@ -104,3 +104,15 @@ services:
       - "0.0.0.0:25:25"
     volumes:
       - ./files/cert/:/tmp/certs/
+      
+--------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------
+
+### Code pour compiler le lab (lien github pour la source du lab: https://github.com/RUB-NDS/alpaca-code)
+
+#!/bin/bash
+for library in baseimage openssl bearssl botan java gnutls golang mbedtls wolfssl rustls; do 
+    (cd "$library" 
+    ./build.sh);
+done
+
